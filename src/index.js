@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 async function runPuppeteer(url) {
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
     await page.setRequestInterception(true);
